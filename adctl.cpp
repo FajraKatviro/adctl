@@ -9,8 +9,8 @@
 
 AdCtl::AdCtl(QObject *parent) : QObject(parent)
 {
-    m_AdMobBanner = CreateQtAdMobBanner();
-    m_AdMobInterstitial = CreateQtAdMobInterstitial();
+    m_AdMobBanner = nullptr;//CreateQtAdMobBanner();
+    m_AdMobInterstitial = nullptr;//CreateQtAdMobInterstitial();
     m_gpgsSignedIn = false;
 
     gpgsTimer = new QTimer(this);
