@@ -248,7 +248,7 @@ protected:
     bool m_isAdMobBannerShowed = false;
     bool m_isStartAdBannerShowed = false;
     bool m_AdMobBannerShowHideTrigger = false;
-    bool m_StartAdBannerShowHideTrigger = false;
+    bool m_StartAdBannerShowHideTrigger = true;
 
     //banners alredy visible bools
     bool m_AdMobWidthAlredyGreatThanZero = false;
