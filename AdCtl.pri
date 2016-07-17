@@ -72,5 +72,5 @@ android {
     adctl2.files = $$PWD/platform/android/src/*
     adctl2.path = /src
 
-    INSTALLS += admob1 admob2 startad1 playservice1 adctl1 adctl2
+    INSTALLS += admob1 admob2 startad1 adctl1 adctl2 #playservice1
 }
