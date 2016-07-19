@@ -330,7 +330,7 @@ int AdCtl::startAdBannerRealY()
 void AdCtl::setStartAdBannerPosition(const QPoint position)
 {
     m_StartAdBannerPosition = position;
-    //if (!m_AdInitialized || !m_StartAdBannerEnabled) { return; }
+    if (!m_AdInitialized || !m_StartAdBannerEnabled) { return; }
     m_platform->setStartAdBannerPosition(position.x(),position.y());
 }
 
