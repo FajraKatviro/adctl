@@ -3,6 +3,7 @@
 #include "QtAdMobInterstitial.h"
 #include <QDebug>
 #include <QTimer>
+#include <QGuiApplication>
 #include "ganalytics.h"
 
 #include "AdCtl_platform.h"
@@ -76,7 +77,7 @@ void AdCtl::init()
     }
 
     if (m_StartAdBannerEnabled) {
-        m_platform->initStartAd();
+        initStartAd();
     }
 
     if (m_GAnalyticsEnabled) {
@@ -104,6 +105,26 @@ float AdCtl::mm()
 float AdCtl::pt()
 {
     return m_pt;
+}
+
+bool AdCtl::event(QEvent* event)
+{
+    if(event->type() == QEvent::User){
+        initStartAd();
+        return true;
+    }
+    return QObject::event(event);
+}
+
+void AdCtl::initStartAd()
+{
+    if(QGuiApplication::applicationState()==Qt::ApplicationActive){
+        //main view is shown now and there are no problems with different initialization calls
+        m_platform->initStartAd();
+    }else{
+        //try again next frame
+        QGuiApplication::postEvent(this,new QEvent(QEvent::User));
+    }
 }
 
 void AdCtl::setTestDevices(const QStringList &testDevices)

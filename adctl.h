@@ -200,6 +200,7 @@ public slots:
     float pt();
 
 protected:
+    bool event(QEvent *event);
     //Timer for control, update and emit properties changes for banners
     QTimer *adctlTimer;
 
@@ -262,6 +263,8 @@ protected:
     float m_dp;
     float m_pt;
     float m_mm;
+private:
+    void initStartAd();
 };
 
 #endif // ADMOBBANNERCTL_H
