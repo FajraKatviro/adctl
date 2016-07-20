@@ -156,6 +156,8 @@ void AdCtl::adctlTimerSlot()
         bool shouldBeVisible = m_StartAdBannerShowHideTrigger;
         m_StartAdBannerShowHideTrigger = true;
         m_StartAdWidthAlredyGreatThanZero = true;
+        setStartAdBannerSize(m_StartAdBannerSize);
+        setStartAdBannerPosition(m_StartAdBannerPosition);
         emit startAdBannerShowed();
         if(!shouldBeVisible){
             hideStartAdBanner();
