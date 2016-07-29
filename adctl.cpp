@@ -321,7 +321,7 @@ void AdCtl::setStartAdBannerSize(const QSize StartAdBannerSize)
 {
     m_StartAdBannerSize = StartAdBannerSize;
     //qDebug() << "StartAdBannerSize C++" << m_StartAdBannerSize;
-    //if (!m_AdInitialized || !m_StartAdBannerEnabled) { return; }
+    if (!m_AdInitialized || !m_StartAdBannerEnabled) { return; }
     m_platform->setStartAdBannerSize(StartAdBannerSize.width(),StartAdBannerSize.height());
 }
 
