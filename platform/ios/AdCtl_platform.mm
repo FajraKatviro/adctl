@@ -127,6 +127,7 @@ struct AdCtl_platform_private{
 AdCtl_platform::AdCtl_platform()
 {
     d=new AdCtl_platform_private;
+    setStartAdBannerSize(1,1);
 }
 
 AdCtl_platform::~AdCtl_platform(){
