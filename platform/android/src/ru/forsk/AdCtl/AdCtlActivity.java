@@ -170,7 +170,8 @@ public class AdCtlActivity extends QtAdMobActivity implements GameHelper.GameHel
                     });
 
                     //Load ad for currently active language in app
-                    m_StartAdBannerView.loadAd(SADView.LANGUAGE_RU); //or this.sadView.loadAd(SADView.LANGUAGE_RU);
+                    m_StartAdBannerView.loadAd(SADView.LANGUAGE_EN);
+                    //m_StartAdBannerView.loadAd(SADView.LANGUAGE_RU); //or this.sadView.loadAd(SADView.LANGUAGE_RU);
                 }
             }
         });
